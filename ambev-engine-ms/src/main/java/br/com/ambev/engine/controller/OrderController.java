@@ -1,8 +1,9 @@
 package br.com.ambev.engine.controller;
 
-import br.com.ambev.engine.domain.Orders;
-import br.com.ambev.engine.dto.CreateOrderRequest;
-import br.com.ambev.engine.dto.OrderResponse;
+import br.com.ambev.engine.dto.CreateOrderRequestDTO;
+import br.com.ambev.engine.dto.FindOrderByCodeResponseDTO;
+import br.com.ambev.engine.entity.Fulfillment;
+import br.com.ambev.engine.dto.CreateOrderResponseDTO;
 import br.com.ambev.engine.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("ambev/v1/engine")
@@ -19,18 +21,18 @@ public class OrderController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Orders> listOrders(){
+    public List<Fulfillment> listOrders(){
         return orderService.listOrders();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<OrderResponse> listOrderById(@PathVariable Long id){
-        return null;
+    @GetMapping("/{code}")
+    public ResponseEntity<FindOrderByCodeResponseDTO> listOrderById(@PathVariable UUID code){
+        return new ResponseEntity<>(orderService.findByCode(code), HttpStatus.OK);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createOrder(@RequestBody Orders order){
-        orderService.createOrder(order);
+    public ResponseEntity<CreateOrderResponseDTO> createOrder(@RequestBody CreateOrderRequestDTO createOrderRequestDTO){
+        return new ResponseEntity<>(orderService.createOrder(createOrderRequestDTO), HttpStatus.CREATED);
     }
 }
