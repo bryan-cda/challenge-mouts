@@ -3,12 +3,12 @@ package br.com.ambev.engine.mapper;
 import br.com.ambev.engine.dto.CreateOrderRequestDTO;
 import br.com.ambev.engine.dto.CreateOrderResponseDTO;
 import br.com.ambev.engine.dto.FindOrderByCodeResponseDTO;
-import br.com.ambev.engine.entity.Fulfillment;
+import br.com.ambev.engine.entity.Order;
 
 public class OrderMapper {
 
-   public static Fulfillment mapToProductOrder(CreateOrderRequestDTO createOrderRequestDTO){
-        return Fulfillment
+   public static Order mapToProductOrder(CreateOrderRequestDTO createOrderRequestDTO){
+        return Order
                 .builder()
                 .name(createOrderRequestDTO.getName())
                 .cnpj(createOrderRequestDTO.getCnpj())
@@ -19,26 +19,26 @@ public class OrderMapper {
 
     }
 
-    public static CreateOrderResponseDTO mapToCreateOrderResponseDTO(Fulfillment fulfillment){
+    public static CreateOrderResponseDTO mapToCreateOrderResponseDTO(Order order){
      return CreateOrderResponseDTO
                .builder()
-               .code(fulfillment.getCode())
-               .name(fulfillment.getName())
-               .cnpj(fulfillment.getCnpj())
-               .email(fulfillment.getEmail())
-               .product(fulfillment.getProduct())
-               .quantity(fulfillment.getQuantity())
+               .code(order.getCode())
+               .name(order.getName())
+               .cnpj(order.getCnpj())
+               .email(order.getEmail())
+               .product(order.getProduct())
+               .quantity(order.getQuantity())
                .build();
     }
 
-    public static FindOrderByCodeResponseDTO mapToFindOrderByCodeRequestDTO(Fulfillment fulfillment){
+    public static FindOrderByCodeResponseDTO mapToFindOrderByCodeRequestDTO(Order order){
        return FindOrderByCodeResponseDTO
                .builder()
-               .name(fulfillment.getName())
-               .cnpj(fulfillment.getCnpj())
-               .email(fulfillment.getEmail())
-               .product(fulfillment.getProduct())
-               .quantity(fulfillment.getQuantity())
+               .name(order.getName())
+               .cnpj(order.getCnpj())
+               .email(order.getEmail())
+               .product(order.getProduct())
+               .quantity(order.getQuantity())
                .build();
     }
 }

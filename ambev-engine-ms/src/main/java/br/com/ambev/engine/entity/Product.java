@@ -1,7 +1,6 @@
 package br.com.ambev.engine.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Builder
+@Table(name = "tb_product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,5 +25,5 @@ public class Product {
 
     @OneToOne(mappedBy = "product")
     @JsonBackReference
-    private Fulfillment fulfillment;
+    private Order order;
 }

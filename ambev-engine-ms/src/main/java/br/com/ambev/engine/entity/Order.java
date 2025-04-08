@@ -14,7 +14,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Builder
-public class Fulfillment {
+@Table(name = "tb_order")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
