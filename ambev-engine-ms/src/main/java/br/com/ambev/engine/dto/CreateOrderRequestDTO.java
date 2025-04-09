@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,7 +17,8 @@ public class CreateOrderRequestDTO {
     private String name;
     private String cnpj;
     private String email;
-    private Product product;
+    private List<Product> products;
     private Integer quantity;
+
 
 }

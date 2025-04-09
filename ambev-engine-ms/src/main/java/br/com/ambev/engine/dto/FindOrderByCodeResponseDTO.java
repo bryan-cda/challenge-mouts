@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -18,5 +19,5 @@ public class FindOrderByCodeResponseDTO {
     private String cnpj;
     private String email;
     private Integer quantity;
-    private Product product;
+    private List<Product> products;
 }

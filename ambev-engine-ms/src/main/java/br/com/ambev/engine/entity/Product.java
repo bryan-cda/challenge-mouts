@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -21,9 +22,10 @@ public class Product {
     private Long id;
     private UUID code;
     private String name;
-    private double price;
+    private BigDecimal price;
 
-    @OneToOne(mappedBy = "product")
+    @ManyToOne
+    @JoinColumn(name = "id_order")
     @JsonBackReference
     private Order order;
 }

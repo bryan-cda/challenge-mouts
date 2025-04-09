@@ -1,5 +1,6 @@
 package br.com.ambev.engine.controller;
 
+import br.com.ambev.engine.dto.OrderTotalAmountRequest;
 import br.com.ambev.engine.entity.Order;
 import br.com.ambev.engine.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -22,18 +23,26 @@ public class OrderController {
         return orderService.listOrders();
     }
 
-    // Método reativo para buscar pedido por código
     @GetMapping("/{code}")
     public Mono<ResponseEntity<Order>> listOrderByCode(@PathVariable UUID code) {
         return orderService.findByCode(code)
-                .map(order -> ResponseEntity.ok(order))
-                .defaultIfEmpty(ResponseEntity.notFound().build());  // Retorna 404 caso não encontre o pedido
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
-    // Método reativo para criar um novo pedido
     @PostMapping
     public Mono<ResponseEntity<Order>> createOrder(@RequestBody Order order) {
         return orderService.createOrder(order)
                 .map(savedOrder -> ResponseEntity.status(201).body(savedOrder));  // Retorna 201 após criar o pedido
+    }
+
+    @GetMapping("/{code}/total")
+    public Mono<ResponseEntity<?>> getOrderTotalAmount(@PathVariable UUID code) {
+        return orderService.findOrderByCodeAndCalculateTotal(code)
+                .map(orderTotalAmountRequest ->
+                        orderTotalAmountRequest != null ?
+                                ResponseEntity.ok(orderTotalAmountRequest) :
+                                ResponseEntity.notFound().build())
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 }
