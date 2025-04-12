@@ -15,36 +15,34 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     public Flux<Product> listProducts() {
-        return Flux.fromIterable(productRepository.findAll());// Retorna todos os produtos de forma reativa
+        return Flux.fromIterable(productRepository.findAll());
     }
 
     public Mono<Product> findByCode(UUID code) {
-        return Mono.just(productRepository.findByCode(code));  // Busca um produto por código
+        return Mono.just(productRepository.findByCode(code));
     }
 
     public Mono<Product> createProduct(Product product) {
-        return Mono.just(productRepository.save(product));  // Cria um novo produto
+        return Mono.just(productRepository.save(product));
     }
 
     public Mono<Product> updateProduct(Long id, Product product) {
-        return Mono.fromCallable(() -> productRepository.findById(id))  // Envolvendo a operação de bloqueio com Mono
+        return Mono.fromCallable(() -> productRepository.findById(id))
                 .flatMap(existingProduct -> {
                     if (existingProduct.isPresent()) {
                         existingProduct.get().setName(product.getName());
                         existingProduct.get().setPrice(product.getPrice());
-                        return Mono.fromCallable(() -> productRepository.save(existingProduct.get()));  // Salva de forma bloqueante, mas de forma reativa
+                        return Mono.fromCallable(() -> productRepository.save(existingProduct.get()));
                     } else {
-                        return Mono.empty();  // Se o produto não for encontrado, retorna um Mono vazio
+                        return Mono.empty();
                     }
                 });
     }
 
     public Mono<Void> deleteProduct(Long id) {
-        return Mono.fromCallable(() -> productRepository.findById(id))  // Envolvendo a operação de bloqueio com Mono
+        return Mono.fromCallable(() -> productRepository.findById(id))
                 .flatMap(optionalProduct -> {
-                    // Exclui o produto de forma bloqueante, mas de forma reativa
-                    // Se o produto não for encontrado, retorna um Mono vazio
                     return optionalProduct.map(product -> Mono.fromRunnable(() -> productRepository.delete(product))).orElseGet(Mono::empty);
-                }).then();  // Retorna Mono<Void> ao final da execução
+                }).then();
     }
 }

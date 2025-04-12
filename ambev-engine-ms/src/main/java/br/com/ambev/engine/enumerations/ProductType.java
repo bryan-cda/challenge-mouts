@@ -115,23 +115,19 @@ public enum ProductType {
     private final String name;
     private final Map<Integer, String> pricesBySize;
 
-    // Construtor do enum
     ProductType(String name, Map<Integer, String> pricesBySize) {
         this.name = name;
         this.pricesBySize = pricesBySize;
     }
 
-    // Método para pegar o nome do produto
     public String getName() {
         return name;
     }
 
-    // Método para pegar o preço por tamanho (em ml)
     public String getPriceBySize(int size) {
         return pricesBySize.getOrDefault(size, "Preço não disponível");
     }
 
-    // Método para obter o preço como valor numérico
     public double getPriceAsDouble(int size) {
         String price = pricesBySize.get(size);
         return price != null ? Double.parseDouble(price.replace("R$", "").replace(",", ".").trim()) : 0.0;

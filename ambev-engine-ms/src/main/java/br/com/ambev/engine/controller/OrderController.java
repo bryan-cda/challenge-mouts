@@ -1,6 +1,5 @@
 package br.com.ambev.engine.controller;
 
-import br.com.ambev.engine.dto.OrderTotalAmountRequest;
 import br.com.ambev.engine.entity.Order;
 import br.com.ambev.engine.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +32,7 @@ public class OrderController {
     @PostMapping
     public Mono<ResponseEntity<Order>> createOrder(@RequestBody Order order) {
         return orderService.createOrder(order)
-                .map(savedOrder -> ResponseEntity.status(201).body(savedOrder));  // Retorna 201 após criar o pedido
+                .map(savedOrder -> ResponseEntity.status(201).body(savedOrder));
     }
 
     @GetMapping("/{code}/total")
