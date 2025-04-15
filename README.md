@@ -39,7 +39,7 @@ A documentação interativa da API está disponível via Swagger/OpenAPI:
 ### 🌐 Endpoints  
 ### 📦 Orders (/ambev/v1/engine/orders)  
 
-- HTTP GET/ambev/v1/engine/orders  [curl -X GET http://server:port/ambev/v1/engine/orders]  
+- HTTP GET/ambev/v1/engine/orders  (curl -X GET http://server:port/ambev/v1/engine/orders)  
 Lista todos os pedidos (Produto A)
 
 - HTTP GET/ambev/v1/engine/orders/{code}  
