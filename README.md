@@ -45,10 +45,10 @@ A documentação interativa da API está disponível via Swagger:
 📦 Orders (/ambev/v1/engine/orders)
 
 Método | Endpoint | Descrição
-GET | / | Lista todos os pedidos (Produto A)
-GET | /{code} | Retorna um pedido pelo código UUID (Produto A)
-POST | / | Cria um novo pedido
-GET | /{code}/total | Totalizador do pedido, chamado pelo Produto B
+GET | ambev/v1/engine/orders | Lista todos os pedidos (Produto A)
+GET | mbev/v1/engine/orders/{code} | Retorna um pedido pelo código UUID (Produto A)
+POST | ambev/v1/engine/orders | Cria um novo pedido
+GET | ambev/v1/engine/orders/{code}/total | Totalizador do pedido, chamado pelo Produto B
 
 📄 Products (/ambev/v1/engine/products)
 
