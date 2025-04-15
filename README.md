@@ -44,20 +44,22 @@ A documentação interativa da API está disponível via Swagger:
 🌐 Endpoints
 📦 Orders (/ambev/v1/engine/orders)
 
-Método | Endpoint | Descrição
-GET | ambev/v1/engine/orders | Lista todos os pedidos (Produto A)
-GET | mbev/v1/engine/orders/{code} | Retorna um pedido pelo código UUID (Produto A)
-POST | ambev/v1/engine/orders | Cria um novo pedido
-GET | ambev/v1/engine/orders/{code}/total | Totalizador do pedido, chamado pelo Produto B
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET    | ambev/v1/engine/orders | Lista todos os pedidos (Produto A) |
+| GET    | ambev/v1/engine/orders/{code} | Retorna um pedido pelo código UUID (Produto A) |
+| POST   | ambev/v1/engine/orders | Cria um novo pedido |
+| GET    | ambev/v1/engine/orders/{code}/total | Totalizador do pedido, chamado pelo Produto B |
 
 📄 Products (/ambev/v1/engine/products)
 
 Método | Endpoint | Descrição
-GET | / | Lista todos os produtos
-GET | /{code} | Retorna um produto pelo UUID
-POST | / | Cria um novo produto
-PUT | /{id} | Atualiza um produto existente
-DELETE | /{id} | Exclui um produto
+|--------|----------|-----------|
+GET | ambev/v1/engine | Lista todos os produtos
+GET | ambev/v1/engine/{code} | Retorna um produto pelo UUID
+POST | ambev/v1/engine | Cria um novo produto
+PUT | ambev/v1/engine/{id} | Atualiza um produto existente
+DELETE | ambev/v1/engine/{id} | Exclui um produto
 
 ⚙️ Por que Spring WebFlux?
 
