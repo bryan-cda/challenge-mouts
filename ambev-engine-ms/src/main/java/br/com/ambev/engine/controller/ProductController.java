@@ -3,6 +3,7 @@ package br.com.ambev.engine.controller;
 import br.com.ambev.engine.entity.Product;
 import br.com.ambev.engine.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -43,10 +44,10 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id)
-                .map(aVoid -> ResponseEntity.noContent().build()) // Retorna 204 após excluir o produto
-                .defaultIfEmpty(ResponseEntity.notFound().build()); // Retorna 404 caso o produto não seja encontrado
+        productService.deleteProduct(id);
+
     }
 
 }
