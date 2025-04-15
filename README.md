@@ -33,22 +33,22 @@ docker compose up -d
 
 A documentação interativa da API está disponível via Swagger/OpenAPI:
 
-🔗 http://localhost:8080/swagger-ui.html
-🔗 http://localhost:8080/swagger-ui/index.html
+🔗 http://localhost:8080/swagger-ui.html  
+🔗 http://localhost:8080/swagger-ui/index.html  
 
 🌐 Endpoints
 📦 Orders (/ambev/v1/engine/orders)
 
-- GET/ambev/v1/engine/orders
+- GET/ambev/v1/engine/orders  
 Lista todos os pedidos (Produto A)
 
-- GET/ambev/v1/engine/orders/{code}
+- GET/ambev/v1/engine/orders/{code}  
 Retorna um pedido pelo código UUID (Produto A)
 
-- POST/ ambev/v1/engine/orders
+- POST/ ambev/v1/engine/orders  
 Cria um novo pedido
 
-- GET/ambev/v1/engine/orders/{code}/total
+- GET/ambev/v1/engine/orders/{code}/total  
 Totalizador do pedido, chamado pelo Produto B
 
 🌐 Endpoints
