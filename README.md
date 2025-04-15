@@ -20,13 +20,12 @@ Este projeto é um microserviço reativo desenvolvido com **Spring Boot 3.2.2**,
 git clone [https://github.com/seu-usuario/seu-repo.git](https://github.com/bryan-cda/challenge-mouts.git)
 cd seu-repo
 
-```
 
 2. Suba o ambiente com Docker Compose:
 
 ```bash
 docker compose up -d
-```
+
 
 O banco PostgreSQL será exposto na porta 5427:5427. Aguarde até que ele esteja totalmente disponível.
 
