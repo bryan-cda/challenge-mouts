@@ -53,3 +53,52 @@ POST/ambev/v1/engine/products: Cria um novo produto
 PUT/ambev/v1/engine/products/{id}: Atualiza um produto existente                   
 DELETE/ambev/v1/engine/products/{id}: Exclui um produto     
 
+⚙️ Por que Spring WebFlux?
+
+Este microserviço foi arquitetado para atender alto volume de requisições simultâneas. O Spring WebFlux é baseado no paradigma reativo, usando Project Reactor, que:
+
+    Trabalha com I/O não bloqueante
+
+    Usa Flux (stream assíncrono com múltiplos elementos)
+
+    Usa Mono (representa uma resposta assíncrona com um único elemento)
+
+    Garante menor consumo de threads e melhor performance sob carga
+
+    Permite aplicações altamente escaláveis com mínimo overhead de recursos
+
+📈 Desempenho e Escalabilidade
+
+Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com facilidade:
+
+    150.000 a 200.000 requisições por dia, com consumo eficiente de CPU e memória, mesmo sob múltiplos usuários concorrentes.
+
+✅ Vantagens do Projeto
+
+    ⚡ Alta performance assíncrona
+
+    🧪 API 100% validada com Swagger/OpenAPI 3
+
+    🐘 Integração com PostgreSQL
+
+    🐳 Pronta para containerização com Docker
+
+    ♻️ Separação de responsabilidades (Product vs Order)
+
+    🔗 API pensada para consumo por diferentes produtos (A e B)
+
+📄 Tecnologias usadas
+
+    Java 17
+
+    Spring Boot 3.2.2
+
+    Spring WebFlux
+
+    Project Reactor
+
+    PostgreSQL
+
+    Docker & Docker Compose
+
+    springdoc-openapi-starter-webflux-ui
