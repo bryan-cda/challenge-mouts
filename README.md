@@ -54,15 +54,20 @@ Totalizador do pedido, chamado pelo Produto B
 🌐 Endpoints
 ### 📦 Products (`/ambev/v1/engine/products`)
 
-GET/ambev/v1/engine/products: Lista todos os produtos                        
-GET/ambev/v1/engine/products/{code}: Retorna um produto pelo código UUID             
-POST/ambev/v1/engine/products: Cria um novo produto                             
-PUT/ambev/v1/engine/products/{id}: Atualiza um produto existente                   
-DELETE/ambev/v1/engine/products/{id}: Exclui um produto     
+- GET/ambev/v1/engine/products  
+Lista todos os produtos                        
+- GET/ambev/v1/engine/products/{code}  
+Retorna um produto pelo código UUID             
+- POST/ambev/v1/engine/products  
+Cria um novo produto                             
+- PUT/ambev/v1/engine/products/{id}  
+Atualiza um produto existente                   
+- DELETE/ambev/v1/engine/products/{id}  
+Exclui um produto     
 
-### ⚙️ Por que Spring WebFlux?
+### ⚙️ Por que Spring WebFlux?  
 
-Este microserviço foi arquitetado para atender alto volume de requisições simultâneas. O Spring WebFlux é baseado no paradigma reativo, usando Project Reactor, que:
+Este microserviço foi arquitetado para atender alto volume de requisições simultâneas. O Spring WebFlux é baseado no paradigma reativo, usando Project Reactor, que:  
 
     Trabalha com I/O não bloqueante
 
@@ -74,13 +79,13 @@ Este microserviço foi arquitetado para atender alto volume de requisições sim
 
     Permite aplicações altamente escaláveis com mínimo overhead de recursos
 
-### 📈 Desempenho e Escalabilidade
+### 📈 Desempenho e Escalabilidade  
 
-Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com facilidade:
+Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com facilidade:  
 
     150.000 a 200.000 requisições por dia, com consumo eficiente de CPU e memória, mesmo sob múltiplos usuários concorrentes.
 
-### ✅ Vantagens do Projeto
+### ✅ Vantagens do Projeto  
 
     ⚡ Alta performance assíncrona
 
@@ -94,7 +99,7 @@ Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com faci
 
     🔗 API pensada para consumo por diferentes produtos (A e B)
 
-### 📄 Tecnologias usadas
+### 📄 Tecnologias usadas  
 
     Java 17
 
@@ -110,6 +115,6 @@ Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com faci
 
     springdoc-openapi-starter-webflux-ui
 
-### 🧠 Contribuições
+### 🧠 Contribuições  
 
 Sinta-se à vontade para abrir PRs, issues ou sugestões! 🚀
