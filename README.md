@@ -102,3 +102,7 @@ Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com faci
     Docker & Docker Compose
 
     springdoc-openapi-starter-webflux-ui
+
+🧠 Contribuições
+
+Sinta-se à vontade para abrir PRs, issues ou sugestões! 🚀
