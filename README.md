@@ -36,8 +36,8 @@ A documentação interativa da API está disponível via Swagger/OpenAPI:
 🔗 http://localhost:8080/swagger-ui.html  
 🔗 http://localhost:8080/swagger-ui/index.html  
 
-🌐 Endpoints
-📦 Orders (/ambev/v1/engine/orders)
+### 🌐 Endpoints  
+### 📦 Orders (/ambev/v1/engine/orders)  
 
 - GET/ambev/v1/engine/orders  
 Lista todos os pedidos (Produto A)
@@ -51,8 +51,8 @@ Cria um novo pedido
 - GET/ambev/v1/engine/orders/{code}/total  
 Totalizador do pedido, chamado pelo Produto B
 
-🌐 Endpoints
-### 📦 Products (`/ambev/v1/engine/products`)
+### 🌐 Endpoints  
+### 📦 Products (`/ambev/v1/engine/products`)  
 
 - GET/ambev/v1/engine/products  
 Lista todos os produtos                        
