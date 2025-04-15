@@ -27,9 +27,9 @@ docker compose up -d
 3. Execute a aplicação (em outra aba/terminal):
 ```
 ./mvnw spring-boot:run
-`` 
+```
 
-📖 Documentação da API
+### 📖 Documentação da API
 
 A documentação interativa da API está disponível via Swagger/OpenAPI:
 
@@ -53,7 +53,7 @@ POST/ambev/v1/engine/products: Cria um novo produto
 PUT/ambev/v1/engine/products/{id}: Atualiza um produto existente                   
 DELETE/ambev/v1/engine/products/{id}: Exclui um produto     
 
-⚙️ Por que Spring WebFlux?
+### ⚙️ Por que Spring WebFlux?
 
 Este microserviço foi arquitetado para atender alto volume de requisições simultâneas. O Spring WebFlux é baseado no paradigma reativo, usando Project Reactor, que:
 
@@ -67,13 +67,13 @@ Este microserviço foi arquitetado para atender alto volume de requisições sim
 
     Permite aplicações altamente escaláveis com mínimo overhead de recursos
 
-📈 Desempenho e Escalabilidade
+### 📈 Desempenho e Escalabilidade
 
 Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com facilidade:
 
     150.000 a 200.000 requisições por dia, com consumo eficiente de CPU e memória, mesmo sob múltiplos usuários concorrentes.
 
-✅ Vantagens do Projeto
+### ✅ Vantagens do Projeto
 
     ⚡ Alta performance assíncrona
 
@@ -87,7 +87,7 @@ Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com faci
 
     🔗 API pensada para consumo por diferentes produtos (A e B)
 
-📄 Tecnologias usadas
+### 📄 Tecnologias usadas
 
     Java 17
 
@@ -103,6 +103,6 @@ Ao utilizar o WebFlux e programação reativa, esta aplicação suporta com faci
 
     springdoc-openapi-starter-webflux-ui
 
-🧠 Contribuições
+### 🧠 Contribuições
 
 Sinta-se à vontade para abrir PRs, issues ou sugestões! 🚀
