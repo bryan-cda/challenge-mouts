@@ -2,7 +2,6 @@ package br.com.ambev.engine.controller;
 
 import br.com.ambev.engine.dto.OrderTotalAmountRequest;
 import br.com.ambev.engine.entity.Order;
-import br.com.ambev.engine.entity.Product;
 import br.com.ambev.engine.service.OrderService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +16,6 @@ import reactor.core.publisher.Mono;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import static java.util.Arrays.asList;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
