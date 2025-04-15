@@ -39,31 +39,31 @@ A documentação interativa da API está disponível via Swagger/OpenAPI:
 ### 🌐 Endpoints  
 ### 📦 Orders (/ambev/v1/engine/orders)  
 
-- HTTP GET/ambev/v1/engine/orders  (curl -X GET http://server:port/ambev/v1/engine/orders)  
-Lista todos os pedidos (Produto A)
+- HTTP GET/ambev/v1/engine/orders  
+Lista todos os pedidos (Produto A)  
 
 - HTTP GET/ambev/v1/engine/orders/{code}  
-Retorna um pedido pelo código UUID (Produto A)
+Retorna um pedido pelo código UUID (Produto A)  
 
 - HTTP POST/ ambev/v1/engine/orders  
-Cria um novo pedido
+Cria um novo pedido  
 
 - HTTP GET/ambev/v1/engine/orders/{code}/total  
-Totalizador do pedido, chamado pelo Produto B
+Totalizador do pedido, chamado pelo Produto B  
 
 ### 🌐 Endpoints  
-### 📦 Products (`/ambev/v1/engine/products`)  
+### 📦 Products (`/ambev/v1/engine/products`)   
 
 - HTTP GET/ambev/v1/engine/products  
-Lista todos os produtos                        
+Lista todos os produtos                         
 - HTTP GET/ambev/v1/engine/products/{code}  
 Retorna um produto pelo código UUID             
-- HTTP POST/ambev/v1/engine/products  
-Cria um novo produto                             
+- HTTP POST/ambev/v1/engine/products   
+Cria um novo produto                              
 - HTTP PUT/ambev/v1/engine/products/{id}  
-Atualiza um produto existente                   
+Atualiza um produto existente                     
 - HTTP DELETE/ambev/v1/engine/products/{id}  
-Exclui um produto     
+Exclui um produto      
 
 ### ⚙️ Por que Spring WebFlux?  
 
