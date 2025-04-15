@@ -42,14 +42,15 @@ A documentação interativa da API está disponível via Swagger:
 🔗 http://localhost:8080/swagger-ui/index.html
 
 🌐 Endpoints
-📦 Orders (/ambev/v1/engine/orders)
+### 📦 Orders (`/ambev/v1/engine/orders`)
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET    | ambev/v1/engine/orders | Lista todos os pedidos (Produto A) |
-| GET    | ambev/v1/engine/orders/{code} | Retorna um pedido pelo código UUID (Produto A) |
-| POST   | ambev/v1/engine/orders | Cria um novo pedido |
-| GET    | ambev/v1/engine/orders/{code}/total | Totalizador do pedido, chamado pelo Produto B |
+| Método | Endpoint                                | Descrição                                        |
+|--------|-----------------------------------------|--------------------------------------------------|
+| GET    | ambev/v1/engine/orders                  | Lista todos os pedidos (Produto A)              |
+| GET    | ambev/v1/engine/orders/{code}           | Retorna um pedido pelo código UUID (Produto A)  |
+| POST   | ambev/v1/engine/orders                  | Cria um novo pedido                             |
+| GET    | ambev/v1/engine/orders/{code}/total     | Totalizador do pedido, chamado pelo Produto B   |
+
 
 📄 Products (/ambev/v1/engine/products)
 
